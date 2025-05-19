@@ -74,3 +74,22 @@ CREATE TABLE `profile_stats` (
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
   UNIQUE KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE jobs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  job_type VARCHAR(50) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  company VARCHAR(255) NOT NULL,
+  location VARCHAR(255),
+  salary VARCHAR(100),
+  description TEXT NOT NULL,
+  requirements TEXT NOT NULL,
+  skills TEXT,
+  experience VARCHAR(100),
+  deadline DATE,
+  contact_email VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
