@@ -70,7 +70,7 @@ try {
     // Return success response
     echo json_encode([
         'status' => 'success',
-        'message' => 'User  successfully',
+        'message' => 'User Login successfully',
         'user' => $user
     ]);
     

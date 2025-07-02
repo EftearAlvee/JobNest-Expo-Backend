@@ -31,7 +31,7 @@ try {
         WHERE j.user_id = ?
           AND (j.deadline IS NULL OR j.deadline >= CURDATE())
         GROUP BY j.id
-        ORDER BY j.created_at DESC
+        ORDER BY j.created_at DESC LIMIT 3 
     ");
     $stmt->execute([$userId]);
     $jobs = $stmt->fetchAll(PDO::FETCH_ASSOC);

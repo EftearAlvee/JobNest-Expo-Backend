@@ -57,6 +57,7 @@ try {
             $skillsByLevel[$skill['level']][] = $skill['name'];
         }
 
+        
         // Build the complete profile response
         $response['success'] = true;
         $response['profile'] = [
